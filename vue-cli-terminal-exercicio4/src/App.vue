@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-  
+    <button @click="counter.a++">Click para contar o elemento 'a'</button>
+    {{ counter }}
   </div>
 </template>
 
 <script>
-
-
 export default {
-  name: 'root',
-  components: {
-    
+  name: "App",
+  data() {
+    return {
+      counter: {
+        x: 0,
+      },
+    }
+  },
+  mounted() {
+    this.$set(this.counter, "y", 1);
+    this.counter = {...this.counter,...{ a: 2, b: 3} };
   }
 }
 </script>
